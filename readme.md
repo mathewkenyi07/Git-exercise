@@ -1,1 +1,17 @@
 # Git exercise Project
+ 
+ git checkout -b dev   => to create and switch to branch dev
+ git push -u exercise1 dev => to push the branch on Github
+ git branch -D dev  => to delete the branch dev locally
+ git push -u exercise1 --delete dev => to delete the branch on Github
+ git checkout main => to switch back to the main branch
+
+ git stash list won't let u switch branches if your local uncommited changes conflict with that branch 
+ it basically cleans your directory so that u can switch safely
+
+ git stash deleles and keeps it in the recycle bin 
+ git add fileName 
+ git stash to stash it
+ git stash pop restores the first file stashed
+ git stash pop stash@{0} to restore the one you want
+ git stash list to show the list of all stashed files 
