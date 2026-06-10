@@ -15,3 +15,5 @@
  git stash pop restores the first file stashed
  git stash pop stash@{0} to restore the one you want
  git stash list to show the list of all stashed files 
+
+ git reset hard used to completely wipe out changes and force project back to a specific past state
