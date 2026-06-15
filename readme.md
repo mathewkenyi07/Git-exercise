@@ -1,10 +1,18 @@
 # Git exercise Project
 
+<<<<<<< HEAD
 ## Bundle 1 
 
 ### Exercise 1 & 2
 
 ```bash 
+=======
+## Bundle 1
+
+### Exercise 1 and 2
+
+```bash
+>>>>>>> dev
  
 MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (dev)
 $ git log
@@ -88,10 +96,15 @@ fa69d08 (exercise1/main, main) initial commit
 
 MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (dev)
 $ 
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
 ```
 
 ## Bundle 2
 
+<<<<<<< HEAD
 ### Exercise 1 
 
 ```bash
@@ -177,3 +190,9 @@ $
 ### Exercise 2
 
 
+=======
+### Exercise 1
+
+
+ 
+>>>>>>> dev
