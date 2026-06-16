@@ -804,6 +804,272 @@ $
 
 ### Exercise 2
 
+```bash
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (main)
+$ git branch
+  dev
+  ft/bundle-2
+  ft/contact-page
+  ft/faq-page
+  ft/service-redesign
+  ft/team-page
+* main
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (main)
+$ git checkout ft/faq-page
+Switched to branch 'ft/faq-page'
+Your branch is up to date with 'exercise1/ft/faq-page'.
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/faq-page)
+$ git checkout -b ft/home-page-redesign
+Switched to a new branch 'ft/home-page-redesign'
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/home-page-redesign)
+$ git checkout dev
+Switched to branch 'dev'
+Your branch is up to date with 'exercise1/dev'.
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (dev)
+$ git status
+On branch dev
+Your branch is up to date with 'exercise1/dev'.
+
+nothing to commit, working tree clean
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (dev)
+$ git status
+On branch dev
+Your branch is up to date with 'exercise1/dev'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   home.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (dev)
+$ git add .
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (dev)
+$ git commit -m "feat: added home page content"
+[dev 917509b] feat: added home page content
+ 1 file changed, 4 insertions(+)
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (dev)
+$ git checkout ft/home-page-redesign
+Switched to branch 'ft/home-page-redesign'
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/home-page-redesign)
+$ git status
+On branch ft/home-page-redesign
+nothing to commit, working tree clean
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/home-page-redesign)
+$ git log
+commit 9c7101f89bf86d156dd2603c0e671de7b3707fe1 (HEAD -> ft/home-page-redesign, exercise1/ft/faq-page, ft/faq-page)
+Author: matt <mathewkenyi47@gmail.com>
+Date:   Tue Jun 16 10:54:35 2026 +0200
+
+    Revert "added service in dev branch"
+    
+    This reverts commit af2593dc149b6647b2036e348739985dc2c69d01.
+
+commit 9d6d38017b1a621aa3d2fee9e19d179a23e02606
+Author: matt <mathewkenyi47@gmail.com>
+:
+commit 9c7101f89bf86d156dd2603c0e671de7b3707fe1 (HEAD -> ft/home-page-redesign, exercise1/ft/faq-page, ft/faq-page)
+Author: matt <mathewkenyi47@gmail.com>
+Date:   Tue Jun 16 10:54:35 2026 +0200
+
+    Revert "added service in dev branch"
+    
+    This reverts commit af2593dc149b6647b2036e348739985dc2c69d01.
+
+commit 9d6d38017b1a621aa3d2fee9e19d179a23e02606
+Author: matt <mathewkenyi47@gmail.com>
+Date:   Tue Jun 16 10:50:29 2026 +0200
+
+    feat: faq page
+
+:
+commit 9c7101f89bf86d156dd2603c0e671de7b3707fe1 (HEAD -> ft/home-page-redesign, exercise1/ft/faq-page, ft/faq-page)
+Author: matt <mathewkenyi47@gmail.com>
+Date:   Tue Jun 16 10:54:35 2026 +0200
+
+    Revert "added service in dev branch"
+    
+    This reverts commit af2593dc149b6647b2036e348739985dc2c69d01.
+
+commit 9d6d38017b1a621aa3d2fee9e19d179a23e02606
+Author: matt <mathewkenyi47@gmail.com>
+Date:   Tue Jun 16 10:50:29 2026 +0200
+
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/home-page-redesign)
+$ git rebase dev
+Successfully rebased and updated refs/heads/ft/home-page-redesign.
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/home-page-redesign)
+$ git status
+On branch ft/home-page-redesign
+nothing to commit, working tree clean
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/home-page-redesign)
+$ git log
+commit 5adae1baa95b7ecafcb0cda54615a0d028ae30ec (HEAD -> ft/home-page-redesign)
+Author: matt <mathewkenyi47@gmail.com>
+Date:   Tue Jun 16 10:54:35 2026 +0200
+
+    Revert "added service in dev branch"
+    
+    This reverts commit af2593dc149b6647b2036e348739985dc2c69d01.
+
+commit 1c0d706d6cdd0c9b0579bb966d8d938003c64751
+Author: matt <mathewkenyi47@gmail.com>
+Date:   Tue Jun 16 10:50:29 2026 +0200
+:
+commit 5adae1baa95b7ecafcb0cda54615a0d028ae30ec (HEAD -> ft/home-page-redesign)
+Author: matt <mathewkenyi47@gmail.com>
+Date:   Tue Jun 16 10:54:35 2026 +0200
+
+    Revert "added service in dev branch"
+    
+    This reverts commit af2593dc149b6647b2036e348739985dc2c69d01.
+
+commit 1c0d706d6cdd0c9b0579bb966d8d938003c64751
+Author: matt <mathewkenyi47@gmail.com>
+Date:   Tue Jun 16 10:50:29 2026 +0200
+
+    feat: faq page
+
+:
+commit 5adae1baa95b7ecafcb0cda54615a0d028ae30ec (HEAD -> ft/home-page-redesign)
+Author: matt <mathewkenyi47@gmail.com>
+Date:   Tue Jun 16 10:54:35 2026 +0200
+
+    Revert "added service in dev branch"
+    
+    This reverts commit af2593dc149b6647b2036e348739985dc2c69d01.
+
+commit 1c0d706d6cdd0c9b0579bb966d8d938003c64751
+Author: matt <mathewkenyi47@gmail.com>
+Date:   Tue Jun 16 10:50:29 2026 +0200
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/home-page-redesign)
+$ git add home.html
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/home-page-redesign)
+$ git commit-m "feat:added menus"
+git: 'commit-m' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit-tree
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/home-page-redesign)
+$ git commit -m "feat:added menus"
+[ft/home-page-redesign a2e1123] feat:added menus
+ 1 file changed, 11 insertions(+), 8 deletions(-)
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/home-page-redesign)
+$ git push
+fatal: The current branch ft/home-page-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream exercise1 ft/home-page-redesign
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/home-page-redesign)
+$   git push --set-upstream exercise1 ft/home-page-redesign
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 1.61 KiB | 824.00 KiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (7/7), completed with 1 local object.
+remote: 
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/mathewkenyi07/Git-exercise/pull/new/ft/home-page-redesign
+remote: 
+To https://github.com/mathewkenyi07/Git-exercise.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign
+branch 'ft/home-page-redesign' set up to track 'exercise1/ft/home-page-redesign'.
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/home-page-redesign)
+$ git checkout ft/faq-page
+Switched to branch 'ft/faq-page'
+Your branch is up to date with 'exercise1/ft/faq-page'.
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/faq-page)
+$ git status
+On branch ft/faq-page
+Your branch is up to date with 'exercise1/ft/faq-page'.
+
+nothing to commit, working tree clean
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/faq-page)
+$ git log
+commit 9c7101f89bf86d156dd2603c0e671de7b3707fe1 (HEAD -> ft/faq-page, exercise1/ft/faq-page)
+Author: matt <mathewkenyi47@gmail.com>
+Date:   Tue Jun 16 10:54:35 2026 +0200
+
+    Revert "added service in dev branch"
+    
+    This reverts commit af2593dc149b6647b2036e348739985dc2c69d01.
+
+commit 9d6d38017b1a621aa3d2fee9e19d179a23e02606
+Author: matt <mathewkenyi47@gmail.com>
+Date:   Tue Jun 16 10:50:29 2026 +0200
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/faq-page)
+$ git checkout -b ft/merge
+Switched to a new branch 'ft/merge'
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/merge)
+$ git merge dev
+hint: Waiting for your editor to close the fil
+Merge made by the 'ort' strategy.
+ home.html | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/merge)
+$ git log
+commit b8dee5e783892780355729df8ce423478c2a32cc (HEAD -> ft/merge)
+Merge: 9c7101f 917509b
+Author: matt <mathewkenyi47@gmail.com>
+Date:   Tue Jun 16 11:33:41 2026 +0200
+
+    Merge branch 'dev' into ft/merge
+
+commit 917509b8f1a19db5dafacb35d91c93b243adcbb7 (dev)
+Author: matt <mathewkenyi47@gmail.com>
+Date:   Tue Jun 16 11:21:13 2026 +0200
+
+    feat: added home page content
+
+MATHEW@Matt MINGW64 ~/Desktop/Bundle1 Exercise1 (ft/merge)
+$ 
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
